@@ -34,7 +34,7 @@ function report_spammer_info()
 		'author'		=> 'Dan Dascalescu',
 		'authorsite'	=> 'http://dandascalescu.com',
 		'version'		=> '1.0',
-		'guid' 			=> '',
+		'guid' 			=> '0b53630a641f43baeea8bee1428c585a',
 		'compatibility' => '16*'
 	);
 }

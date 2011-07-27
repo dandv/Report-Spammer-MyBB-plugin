@@ -7,6 +7,7 @@ Settings: 1
 Database changes: none
 Templates changed: member_profile_modoptions, modcp_editprofile
 Templates added: report_spammer_display
+Website: https://github.com/dandv/Report-Spammer-MyBB-plugin
 
 
 
@@ -21,11 +22,33 @@ spammers. You can get a key from http://www.stopforumspam.com/signup.
 
 
 
+DOCUMENTATION
+=====================
+This plugin is aimed at moderators who suspect a user may be spamming. The plugin will add a panel
+to the "Edit this user in Mod CP" page, with information from StopForumSpam.com on the user's
+username, e-mail, and IP addresses used. It will also do a reverse IP lookup and get the user's
+hostname, ISP and organization from WhatIsMyIPAddress.com. Since many spammers use server farms
+for bot accounts, ISPs that have "server" in their name (e.g. ubiquityservers.com) will be flagged.
+Based on this information, plus other information from the user's profile and posts (if any), a
+moderator can make a decision as to whether the user is a spammer or not.
+
+Spammer accounts commonly:
+* have a username that doesn't make sense in any language (e.g. "xrdwibf"), or is an unusual name
+  (e.g. "Orville Cooksley")
+* have as ISP a web hosting provider, often with "server" in their name
+* have a signature that advertises some product or service
+
+A button to report the spammer, or confirm the report if they had been reported already, is
+provided. It will generate an AJAX request to your MyBB instance, so the moderator doesn't have
+to leave the page.
+
+
+
 CHANGELOG
 =====================
 1.0, 2011-07-23
-  First version: detect spammers based on stopforumspam.com data and whatismyipaddress.com reverse IP lookup
-  In use on at http://forum.quantifiedself.com
+  First version: detect spammers using whatismyipaddress.com reverse IP lookup and stopforumspam.com
+  In use at http://forum.quantifiedself.com
 
 1.1, 2011-07-27
   Added AJAX button to report a spammer or confirm the report to stopforumspam.com
