@@ -1,6 +1,6 @@
 <?php
 /**
- * "Report Spammer" v1.1 MyBB plugin
+ * "Report Spammer" v1.2 MyBB plugin
  * 
  * Use various web sites and services to gather information of spamming activity by the user currently edited in Mod CP.
  * Offer the option of reporting the scumbag to StopForumSpam.com.
@@ -208,11 +208,10 @@ function report_spammer_display()
 */
 	
 	$ch = curl_init();
-	curl_setopt_array($ch, array(
-		CURLOPT_HEADER => 0,
-		CURLOPT_FOLLOWLOCATION => true,  // follow redirects
-		CURLOPT_RETURNTRANSFER => true   // return a string, don't output it directly
-	));
+	## curl_setopt_array doesn't work in some configurations (see http://community.mybb.com/thread-100846-post-735575.html#pid735575)
+	curl_setopt($ch, CURLOPT_HEADER, false);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);  // follow redirects
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  // return a string, don't output it directly
 
 	// see http://stopforumspam.com/usage
 	curl_setopt($ch, CURLOPT_URL, 'http://www.stopforumspam.com/api?email=' . urlencode($user['email']) . '&username=' . urlencode($user['username']) . '&f=serial');

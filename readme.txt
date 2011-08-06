@@ -1,6 +1,6 @@
 DESCRIPTION
 =====================
-"Report Spammer" is a MyBB plugin to detect and report spammers using
+"Report Spammer" v1.2 is a MyBB plugin to detect and report spammers using
 web sites and services like StopForumSpam.com and WhatIsMyIPAddress.com.
 
 Settings: 1
@@ -52,7 +52,9 @@ CHANGELOG
 
 1.1, 2011-07-27
   Added AJAX button to report a spammer or confirm the report to stopforumspam.com
-  
+
+1.2, 2011-08-05
+  Use curl_setop instead of curl_setopt_array, for maximum portability (thanks pavemen)
 
   
 LOCALIZATION

@@ -1,5 +1,5 @@
 /**
- * "Report Spammer" v1.1 MyBB plugin
+ * "Report Spammer" v1.2 MyBB plugin
  * 
  * For documentation and license, see https://github.com/dandv/Report-Spammer-MyBB-plugin
  *
